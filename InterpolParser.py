@@ -335,7 +335,8 @@ class InterpolParser(Parser):
         try:
             name = self.get_clean_dict_value(rednotice_clean_data, 'name')
             forename = self.get_clean_dict_value(rednotice_clean_data, 'forename')
-            rednotice_name = f'{name}_{forename}'
+            entity_id = self.get_clean_dict_value(rednotice_clean_data, 'entity_id')
+            rednotice_name = f'{name}_{forename}_{entity_id}'
             return rednotice_name
         except Exception as ex:
             print(f'get_full_name - {ex}')
